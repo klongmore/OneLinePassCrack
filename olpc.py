@@ -1,0 +1,1 @@
+import itertools, string, base64, getpass; b64pass = str(base64.b64encode(getpass.getpass(prompt="Password: ").encode())); [exit('Found it! Your password is: "' + ''.join(attempt) + '".') for length in range(1, 11) for attempt in itertools.product(string.printable, repeat=length) if str(base64.b64encode(''.join(attempt).encode())) == b64pass]
